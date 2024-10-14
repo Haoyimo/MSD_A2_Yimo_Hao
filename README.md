@@ -1,4 +1,4 @@
-# Milk Tea Shop Purchase Program
+# Milk Tea Purchase Program
 
 ## Project Overview
 
