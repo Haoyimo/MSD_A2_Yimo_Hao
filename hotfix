@@ -46,11 +46,3 @@ def create_user():
 
 def main():
     while True:
-        create_user()
-        again = input("是否要注册另一个用户？(y/n): ")
-        if again.lower() != 'y':
-            print("感谢使用注册系统！")
-            break
-
-if __name__ == "__main__":
-    main()
