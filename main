@@ -1,0 +1,92 @@
+# 奶茶菜单
+menu = {
+    '珍珠奶茶': 10,
+    '奶盖茶': 12,
+    '抹茶奶茶': 14,
+    '水果茶': 15,
+    '咖啡奶茶': 13
+}
+
+# 奶茶大小
+sizes = {
+    '小杯': 0,
+    '中杯': 2,
+    '大杯': 4
+}
+
+# 配料价格
+toppings = {
+    '珍珠': 2,
+    '椰果': 2,
+    '牛奶': 1,
+    '芋圆': 3,
+    '布丁': 2
+}
+
+def display_menu():
+    print("欢迎来到奶茶店！")
+    print("\n--- 奶茶菜单 ---")
+    for drink, price in menu.items():
+        print(f"{drink}: {price} 元")
+    
+    print("\n--- 奶茶大小 ---")
+    for size, extra_price in sizes.items():
+        print(f"{size}: {extra_price} 元（加价）")
+    
+    print("\n--- 配料 ---")
+    for topping, price in toppings.items():
+        print(f"{topping}: {price} 元")
+
+def get_order():
+    order = {}
+    
+    # 选择奶茶
+    drink = input("请选择奶茶类型: ")
+    if drink not in menu:
+        print("您选择的奶茶不在菜单上！")
+        return None
+    
+    # 选择大小
+    size = input("请选择奶茶大小 (小杯/中杯/大杯): ")
+    if size not in sizes:
+        print("您选择的大小不在菜单上！")
+        return None
+
+    # 选择配料
+    selected_toppings = []
+    while True:
+        topping = input("请选择配料 (输入 '结束' 完成选择): ")
+        if topping == '结束':
+            break
+        elif topping in toppings:
+            selected_toppings.append(topping)
+        else:
+            print("您选择的配料不在菜单上！")
+
+    order['drink'] = drink
+    order['size'] = size
+    order['toppings'] = selected_toppings
+    return order
+
+def calculate_total(order):
+    if order is None:
+        return 0
+    
+    total = menu[order['drink']] + sizes[order['size']]
+    for topping in order['toppings']:
+        total += toppings[topping]
+    return total
+
+def main():
+    display_menu()
+    order = get_order()
+    total_price = calculate_total(order)
+    
+    if total_price > 0:
+        print(f"\n您点的奶茶是: {order['drink']} ({order['size']})")
+        if order['toppings']:
+            print(f"配料: {', '.join(order['toppings'])}")
+        print(f"总价: {total_price} 元")
+
+if __name__ == "__main__":
+    main()
