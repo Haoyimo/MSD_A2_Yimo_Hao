@@ -1,5 +1,4 @@
-import json
-import hashlib
+
 
 # 用户信息存储文件
 USER_DATA_FILE = 'user_data.json'
@@ -52,6 +51,5 @@ def main():
             print("感谢使用注册系统！")
             break
 
-if __name__ == "__main__":
-    main()
+
 
