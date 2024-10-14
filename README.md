@@ -1,19 +1,20 @@
-# 奶茶店购买程序
+# Milk Tea Shop Purchase Program
 
-## 项目简介
+## Project Overview
 
-该项目旨在设计一个奶茶店购买程序，主要功能包括奶茶的选取、采购和付款。该程序旨在提升用户体验，使顾客能够轻松选择和购买奶茶。
+This project aims to design a purchasing program for a milk tea shop. The main features include the selection of milk tea, procurement, and payment. The program is designed to enhance the user experience, allowing customers to easily choose and purchase their favorite milk tea.
 
-## 功能
+## Features
 
-- **奶茶选取**：用户可以浏览可用的奶茶选项，并选择自己喜欢的产品。
-- **采购**：用户可以将所选的奶茶添加到购物车中，以便进行集中采购。
-- **付款**：提供多种支付方式，方便用户完成付款流程。
+- **Milk Tea Selection**: Users can browse available milk tea options and choose their preferred products.
+- **Procurement**: Users can add selected milk tea to their shopping cart for centralized procurement.
+- **Payment**: Multiple payment methods are provided to facilitate the checkout process for users.
 
-## 更新内容
+## Updates
 
-- **新增创建账户功能**：用户现在可以创建账户，以便于管理订单和个人信息。
+- **New Account Creation Feature**: Users can now create accounts to manage their orders and personal information.
 
-## 当前状态
+## Current Status
 
-该项目正在持续更新中，欢迎随时关注最新进展。
+The project is continuously being updated, and we welcome you to follow along for the latest developments.
+
