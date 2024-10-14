@@ -36,13 +36,7 @@ def create_user():
             print("密码至少需要6个字符！")
             continue
         break
-
-    # 存储用户信息，密码哈希化
-    user_data[username] = hash_password(password)
-    with open(USER_DATA_FILE, 'w') as f:
-        json.dump(user_data, f)
-
-    print(f"用户 '{username}' 创建成功！")
+}' 创建成功！")
 
 def main():
     while True:
