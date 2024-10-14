@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the improvements made to address issues identified in the Milk Tea Shop Purchase Program's account creation process. 
+This document outlines the improvements made to address issues identified in the Milk Tea Purchase Program's account creation process. 
 
 ## Description
 
