@@ -1,0 +1,36 @@
+import json
+
+# 用户信息存储文件
+USER_DATA_FILE = 'user_data.json'
+
+# 检查用户数据文件是否存在，若不存在则创建一个空文件
+try:
+    with open(USER_DATA_FILE, 'r') as f:
+        user_data = json.load(f)
+except FileNotFoundError:
+    user_data = {}
+
+def create_user():
+    print("欢迎使用用户注册系统")
+    
+    # 输入用户名
+    username = input("请输入用户名: ")
+    if username in user_data:
+        print("用户名已存在，请选择其他用户名！")
+        return
+
+    # 输入密码
+    password = input("请输入密码: ")
+
+    # 存储用户信息
+    user_data[username] = password
+    with open(USER_DATA_FILE, 'w') as f:
+        json.dump(user_data, f)
+
+    print(f"用户 '{username}' 创建成功！")
+
+def main():
+    create_user()
+
+if __name__ == "__main__":
+    main()
