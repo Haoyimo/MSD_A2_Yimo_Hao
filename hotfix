@@ -1,0 +1,56 @@
+import json
+import hashlib
+
+# 用户信息存储文件
+USER_DATA_FILE = 'user_data.json'
+
+# 检查用户数据文件是否存在，若不存在则创建一个空文件
+try:
+    with open(USER_DATA_FILE, 'r') as f:
+        user_data = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    user_data = {}
+
+def hash_password(password):
+    """使用SHA-256对密码进行哈希处理"""
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def create_user():
+    print("欢迎使用用户注册系统")
+    
+    # 输入用户名并验证
+    while True:
+        username = input("请输入用户名: ")
+        if len(username) < 3:
+            print("用户名至少需要3个字符！")
+            continue
+        if username in user_data:
+            print("用户名已存在，请选择其他用户名！")
+            continue
+        break
+
+    # 输入密码并验证
+    while True:
+        password = input("请输入密码: ")
+        if len(password) < 6:
+            print("密码至少需要6个字符！")
+            continue
+        break
+
+    # 存储用户信息，密码哈希化
+    user_data[username] = hash_password(password)
+    with open(USER_DATA_FILE, 'w') as f:
+        json.dump(user_data, f)
+
+    print(f"用户 '{username}' 创建成功！")
+
+def main():
+    while True:
+        create_user()
+        again = input("是否要注册另一个用户？(y/n): ")
+        if again.lower() != 'y':
+            print("感谢使用注册系统！")
+            break
+
+if __name__ == "__main__":
+    main()
